@@ -1,0 +1,17 @@
+plugin.tx_arestwebservice.settings = COA
+
+ajax = PAGE
+ajax {
+
+    typeNum = 99
+    config {
+        disableAllHeaderCode = 1
+        additionalHeaders = Content-type:application/json
+        xhtml_cleaning = 0
+        admPanel = 0
+    }
+
+    10 < tt_content.list.20.arestwebservice_pi1
+}
+
+config.tx_arestwebservice.persistence.classes.Tx_MyExtension_Domain_Model_TTNews.mapping.tableName = tt_news

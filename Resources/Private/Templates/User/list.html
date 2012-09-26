@@ -1,0 +1,18 @@
+<table><tr>
+<th>Username</th>
+<th>Name of user</th>
+</tr>
+<f:for each="{users}" as="user">
+    <tr>
+        <td>{user.username}</td>
+        <f:if condition="{user.name}">
+            <f:then>
+                <td>{user.name}</td>
+            </f:then>
+            <f:else>
+                <td>No Name</td>
+            </f:else>
+        </f:if>
+    </tr>
+</f:for>
+</table>

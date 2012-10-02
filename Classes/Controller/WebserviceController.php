@@ -55,18 +55,16 @@ class Tx_ARestWebservice_Controller_WebserviceController extends Tx_Extbase_MVC_
 		$json = array('alive' => array(
 				array(
 						'StartTime' => '12.08.2012 20:00',
-						'Titel' => 'Jugend',
-						'Desc' => 'Thema1',
+						'Titel' => 'title',
+						'Desc' => 'desc1',
 				),
 				array(
 						'StartTime' => '19.08.2012 20:00',
-						'Titel' => 'Jugend',
-						'Desc' => $testOutput,
+						'Titel' => 'title',
+						'Desc' => 'des2',
 				)
 		)
 		);
-
-		//return json_encode($json);
 		return json_encode($json);
 	}
 

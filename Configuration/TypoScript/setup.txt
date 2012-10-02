@@ -14,4 +14,14 @@ ajax {
     10 < tt_content.list.20.arestwebservice_pi1
 }
 
-config.tx_arestwebservice.persistence.classes.Tx_MyExtension_Domain_Model_TTNews.mapping.tableName = tt_news
+plugin.tx_sffluid {
+   persistence {
+      classes {
+         Tx_ARestWebservice_Domain_Model_TTNews {
+            mapping {
+               tableName = tt_news
+            }
+         }
+      }
+   }
+}

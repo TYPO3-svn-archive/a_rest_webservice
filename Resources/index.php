@@ -39,23 +39,17 @@ $app->get('/login/:name/:password', function ($name, $password) {
        exit; 
     }  
 
-    if($name == "jugend" && $password="jugend"){
-
-       $domain = '127.0.0.1';
-
-       $url = 'http://'.$domain.'/?type=99&tx_arestwebservice_pi1[action]=rest&tx_arestwebservice_pi1[username]='.$name.'&tx_arestwebservice_pi1[password]='.$password;
-       $ch = curl_init();
-       curl_setopt ($ch, CURLOPT_URL,$url);
-       curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
-       curl_setopt($ch,CURLOPT_SSL_VERIFYPEER,FALSE);
-       $contents = curl_exec($ch);
-       curl_close($ch);
+    $url = 'https://'.$_SERVER['SERVER_NAME'].'/?type=99&tx_arestwebservice_pi1[action]=rest&tx_arestwebservice_pi1[username]='.$name.'&tx_arestwebservice_pi1[password]='.$password;
+    $ch = curl_init();
+    curl_setopt ($ch, CURLOPT_URL,$url);
+    curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch,CURLOPT_SSL_VERIFYPEER,FALSE);
+    $contents = curl_exec($ch);
+    curl_close($ch);
 
        // display file
        echo $contents;
-    } else {
-      throw new Exception("Error on login!"); 
-    }
+
 });
 
 // POST route
